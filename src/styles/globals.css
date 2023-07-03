@@ -1,0 +1,97 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html,
+body,
+#root {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  -webkit-user-select: none; /* Safari */
+  -ms-user-select: none; /* IE 10 and IE 11 */
+  user-select: none; /* Standard syntax */
+}
+
+.builder-column > .builder-blocks > .builder-block {
+  flex-grow: 1;
+}
+
+.builder-body-text ul {
+  margin-left: 0;
+  padding-left: 0;
+}
+
+.builder-body-text li {
+  position: relative;
+  padding-left: 24px;
+}
+
+.builder-body-text li:not(:last-child) {
+  margin-bottom: 12px;
+}
+
+.builder-body-text li:before {
+  height: 24px;
+  width: 24px;
+  position: absolute;
+  top: -2px;
+  left: 0;
+}
+
+.dark .dark\:builder-body-text-dark li:before {
+  content: url("data:image/svg+xml,%3Csvg width='24' height='24' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Crect x='6' y='6' width='12' height='12' rx='6' fill='%23F4FF58' stroke='%23323311' stroke-width='4'/%3E%3C/svg%3E");
+}
+
+.builder-body-text-light li:before {
+  content: url("data:image/svg+xml,%3Csvg width='24' height='24' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Crect x='6' y='6' width='12' height='12' rx='6' fill='%2350CBE6' stroke='%23D6F8FF' stroke-width='4'/%3E%3C/svg%3E");
+}
+
+.builder-body-text ol {
+  list-style-type: decimal;
+  list-style-position: inside;
+}
+
+.builder-body-text ul ul,
+.builder-body-text ol ul {
+  list-style-type: circle;
+  list-style-position: inside;
+  margin-left: 15px;
+}
+
+.builder-body-text ol ol,
+.builder-body-text ul ol {
+  list-style-type: lower-latin;
+  list-style-position: inside;
+  margin-left: 15px;
+}
+
+.CollapsibleContent {
+  overflow: hidden;
+}
+.CollapsibleContent[data-state='open'] {
+  animation: slideDown 300ms ease-out;
+}
+.CollapsibleContent[data-state='closed'] {
+  animation: slideUp 300ms ease-out;
+}
+
+@keyframes slideDown {
+  from {
+    height: 0;
+  }
+  to {
+    height: var(--radix-collapsible-content-height);
+  }
+}
+
+@keyframes slideUp {
+  from {
+    height: var(--radix-collapsible-content-height);
+  }
+  to {
+    height: 0;
+  }
+}
