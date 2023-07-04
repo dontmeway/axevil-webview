@@ -30,7 +30,7 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
     props: {
       page: page || null,
     },
-    revalidate: 5,
+    // revalidate: 5,
   }
 }
 
@@ -42,7 +42,7 @@ export async function getStaticPaths() {
 
   return {
     paths: pages.map((page) => `${page.data?.url}`).filter((url) => url !== '/'),
-    fallback: 'blocking',
+    fallback: false,
   }
 }
 
