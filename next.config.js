@@ -1,7 +1,6 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   reactStrictMode: true,
-  output: 'export',
   env: {
     BUILDER_API_KEY: 'ffbb056c7c114e4080317099b533d26f',
     BUILDER_MODEL: 'page',
